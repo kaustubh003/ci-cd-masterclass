@@ -26,7 +26,7 @@ jobs:
         run: mvn clean package -DskipTests
 
       - name: Building Docker Image
-        run: docker build -t ${{ secrets.DOCKER_USERNAME }}/${{ env.IMAGE_NAME }}:latest
+        run: docker build -t ${{ secrets.DOCKER_USERNAME }}/${{ env.IMAGE_NAME }}:latest .
 
       - name: Login to DockerHub
         uses: docker/login-action@v4
